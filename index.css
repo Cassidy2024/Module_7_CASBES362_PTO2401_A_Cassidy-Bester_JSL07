@@ -10,6 +10,18 @@ h1 {
   color: #333;
 }
 
+
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+
 #cardForm {
   margin: 20px auto;
   max-width: 400px;
@@ -35,49 +47,60 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #0056a7;
-}
+
 
 /* Certificate Modal */
 
 .modal {
+    display: none;
     max-width: 800px;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto; 
     position: fixed;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center both vertically and horizontally */
-    z-index: 1;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 999;
+    
+    width: 100%;
+    height: 100%;
   }
+
   
   .modal-content {
     background-color: #fff;
     padding: 40px;
+    border: 1px solid #888;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: relative;
     border: 3px solid #659f8f;
+    height: 80%;
+    width: 90%;
+    z-index:1000 ;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
   }
   
 
 .modal-content::before {
   content: "";
-  position: absolute;
+  /*position: absolute;*/
   top: -2px; right: -2px; bottom: -2px; left: -2px;
-  z-index: -1;
+  z-index: 1000;
   background: linear-gradient(#659f8f, #5d5f5e);
   border-radius: 15px;
 }
 
 .modal-content::after {
   content: "";
-  position: absolute;
+  /*position: absolute;*/
   top: -1px; right: -1px; bottom: -1px; left: -1px;
-  z-index: -2;
+ 
   background: #fff;
   border: 1px solid #dc7f5f;
   border-radius: 15px;
+  z-index: 1000;
 }
 
 #certificateContent {
@@ -88,6 +111,7 @@ button:hover {
   border: 2px solid #dc7f5f;
   border-radius: 10px;
   margin: 20px 0;
+  z-index: 1000;
 }
 
 h1, .modal-content h2, .modal-content p {
@@ -96,20 +120,31 @@ h1, .modal-content h2, .modal-content p {
 
 .close {
   color: #dc7f5f;
+  font-size: 28px;
+  font-weight: bold;
+  z-index: 1001;
+  position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+  
 }
 
-/* Adding a fancy border to the certificate content */
-#certificateContent {
-  background: #f9f9f9 url('path/to/your/decorative-border-image.png') center/contain no-repeat;
+#studentNamePlaceholder, #courseNamePlaceholder {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-/* Adjust button styles to fit the theme */
-button {
-  background-color: #659f8f;
-  color: #fff;
+.modal-image {
+  max-width: 75%;  
+  height: auto;  
+  display: block;
+  margin: 0 auto;
 }
 
 button:hover {
   background-color: #5d5f5e;
+  cursor: pointer;
 }
 
